@@ -1,0 +1,168 @@
+/* General page styling */
+.tutoringBackground {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh; /* Ensures full height */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    background-color: #FFE5B4; /* Light background for contrast */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Abstract shapes for background */
+.tutoringBackground::before,
+.tutoringBackground::after {
+    content: '';
+    position: absolute;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Creates a triangle shape */
+    background: rgba(255, 165, 0, 0.3); /* Light orange */
+    z-index: 1; /* Behind the content */
+}
+
+.tutoringBackground::before {
+    width: 400px;
+    height: 400px;
+    top: -50px; /* Position off-screen */
+    left: -100px;
+}
+
+.tutoringBackground::after {
+    width: 500px;
+    height: 500px;
+    bottom: -200px;
+    right: -150px;
+    background: rgba(255, 69, 0, 0.3); /* Red-Orange */
+}
+
+/* Main content container */
+.mainContent {
+    display: flex; /* Flexbox for horizontal layout */
+    flex-direction: column; /* Align items horizontally */
+    align-items: center; /* Center align vertically */
+    justify-content: center; /* Center align horizontally */
+    width: 100%; /* Full width */
+    padding: 20px; /* Padding around content */
+    z-index: 2; /* Above background shapes */
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.mainContent h1 {
+    font-weight: bold;
+    color: #72bbbb;
+}
+
+.introSubContent {
+    display: flex; /* Flexbox for horizontal layout */
+    flex-direction: row; /* Align items horizontally */
+    align-items: center; /* Center align vertically */
+    justify-content: center; /* Center align horizontally */
+    width: 100%; /* Full width */
+    padding: 20px; /* Padding around content */
+}
+
+.qualificationsSubContent {
+    display: flex; /* Flexbox for horizontal layout */
+    flex-direction: row; /* Align items horizontally */
+    align-items: center; /* Center align vertically */
+    justify-content: center; /* Center align horizontally */
+    width: 100%; /* Full width */
+    padding: 20px; /* Padding around content */
+}
+
+/* Image styling */
+.mainContent img {
+    width: 300px; /* Adjust size */
+    height: auto; /* Maintain aspect ratio */
+    border: 30px solid rgba(255, 192, 203, 0.7); /* Pastel pink border */
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px; /* Space around images */
+    z-index: 2; /* Above background shapes */
+}
+
+/* Text styling */
+.textContent {
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Stack text vertically */
+    margin: 0 20px; /* Space on sides */
+    z-index: 2; /* Above background shapes */
+}
+
+.testimonialsHeader {
+    font-size: 2rem; /* Adjust the size as needed */
+    text-align: center; /* Center the text */
+    margin: 30px 0; /* Space above and below the header */
+}
+
+.testimonialsHeader span {
+    display: inline-block; /* Allow padding and margin */
+    padding: 10px 0; /* Space above and below the text */
+    position: relative; /* Position for shimmer effect */
+}
+
+.testimonialsHeader p {
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 5px;
+}
+
+.testimonialsHeader a {
+    color: #18b5b5; /* Light blue as base color */
+    font-weight: normal; /* Less bold for "Read my..." */
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.7); /* Subtle glow */
+    text-decoration: none; /* No underline */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.testimonialsHeader a:hover {
+    animation: shimmer 1s infinite; /* Quicker shimmer effect on hover */
+}
+
+@keyframes shimmer {
+    0% {
+        color: #00FFFF; /* Light blue */
+        text-shadow: 0 0 5px rgba(0, 255, 255, 0.7), 0 0 10px rgba(0, 255, 100, 0.7);
+    }
+    25% {
+        color: #00FF99; /* Light green */
+        text-shadow: 0 0 7px rgba(0, 255, 100, 0.7), 0 0 20px rgba(0, 255, 255, 0.7);
+    }
+    50% {
+        color: #00CCFF; /* Cyan */
+        text-shadow: 0 0 10px rgba(0, 255, 255, 1), 0 0 30px rgba(0, 204, 255, 1);
+    }
+    75% {
+        color: #66FFCC; /* Teal */
+        text-shadow: 0 0 12px rgba(102, 255, 204, 1), 0 0 40px rgba(0, 204, 204, 1);
+    }
+    100% {
+        color: #00FFFF; /* Back to light blue */
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 100, 0.7);
+    }
+}
+
+.testimonialsHeader span:hover a {
+    color: #18b5b5; /* Ensure it's a base blue on hover */
+}
+
+/* Footer styling */
+.footer {
+    width: 100%; /* Full width */
+    background-color: rgba(255, 223, 186, 0.9); /* Light pastel footer */
+    padding: 20px; /* Padding */
+    text-align: center; /* Centered text */
+    position: absolute; /* Stick to bottom */
+    bottom: 0; /* Align to bottom */
+    left: 0; /* Align to left */
+}
+
+/* Footer links styling */
+.footer a {
+    color: #000; /* Black text */
+    text-decoration: none; /* No underline */
+    margin: 0 10px; /* Space between links */
+    font-weight: bold;
+    padding-right: 20px;
+}

@@ -1,0 +1,107 @@
+/* General page styling */
+.tutoringBackground {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh; /* Ensures full height */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    background-color: #FFE5B4; /* Light background for contrast */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Abstract shapes for background */
+.tutoringBackground::before,
+.tutoringBackground::after {
+    content: '';
+    position: absolute;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Creates a triangle shape */
+    background: rgba(255, 165, 0, 0.3); /* Light orange */
+    z-index: 1; /* Behind the content */
+}
+
+.tutoringBackground::before {
+    width: 400px;
+    height: 400px;
+    top: -50px; /* Position off-screen */
+    left: -100px;
+}
+
+.tutoringBackground::after {
+    width: 500px;
+    height: 500px;
+    bottom: -200px;
+    right: -150px;
+    background: rgba(255, 69, 0, 0.3); /* Red-Orange */
+}
+
+/* Main content container */
+.mainContent {
+    display: flex; /* Flexbox for horizontal layout */
+    flex-direction: column; /* Align items horizontally */
+    align-items: center; /* Center align vertically */
+    justify-content: center; /* Center align horizontally */
+    width: 100%; /* Full width */
+    padding: 20px; /* Padding around content */
+    z-index: 2; /* Above background shapes */
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/* Individual testimonial paragraphs */
+.mainContent div {
+    background-color: #ffe4e1; /* Pastel color for bubbles */
+    border-radius: 30px;
+    padding: 20px;
+    margin: 20px;
+    width: 40%; /* Adjust size of speech bubbles */
+    position: relative;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainContent div::before {
+    content: '';
+    position: absolute;
+    border-radius: 30px;
+    width: 20px;
+    height: 20px;
+    background-color: inherit;
+    bottom: 10px;
+    left: 20px;
+    transform: rotate(45deg);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Text styling */
+.mainContent p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+}
+
+
+/* Footer styling */
+.footer {
+    width: 100%; /* Full width */
+    background-color: rgba(255, 223, 186, 0.9); /* Light pastel footer */
+    padding: 20px; /* Padding */
+    text-align: center; /* Centered text */
+    position: absolute; /* Stick to bottom */
+    bottom: 0; /* Align to bottom */
+    left: 0; /* Align to left */
+}
+
+/* Footer links styling */
+.footer a {
+    color: #000; /* Black text */
+    text-decoration: none; /* No underline */
+    margin: 0 10px; /* Space between links */
+    font-weight: bold;
+    padding-right: 20px;
+}
