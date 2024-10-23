@@ -1,0 +1,46 @@
+/* Navigation bar container */
+ul {
+    list-style-type: none;
+    margin: 0; /* Remove the -433px margin, which might be causing shifting */
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    position: fixed; /* Stays on top of the page when scrolling */
+    top: 0;
+    left: 0; /* Ensures it starts from the left edge of the screen */
+    right: 0; /* Ensures it spans to the right edge of the screen */
+    width: 100%; /* Spans the full width of the page */
+    height: 80px; /* Taller for a spacious layout */
+    z-index: 1000; /* Ensures it's above other elements */
+}
+
+/* Navigation items */
+li {
+    display: inline;
+    padding: 25px 40px; /* Padding for spacing */
+    font-family: 'Georgia', serif;
+    color: #e6ffff; /* Same color as main header */
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Spacing between items */
+li + li {
+    margin-left: 40px;
+}
+
+/* Links styling */
+li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li a:hover {
+    color: #052d91;
+}
+

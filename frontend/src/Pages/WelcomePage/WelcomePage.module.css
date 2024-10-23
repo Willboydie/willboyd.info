@@ -1,0 +1,118 @@
+/* General page styling */
+.background {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh; /* Ensures full height but adapts to changes */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF99FF;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Abstract shapes for background */
+.background::before,
+.background::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ff1a66 0%, #ac00e6 100%);
+    opacity: 0.3;
+    z-index: 1; /* Background shapes behind content */
+}
+
+.background::before {
+    width: 500px;
+    height: 500px;
+    top: -50px;
+    left: -130px;
+}
+
+.background::after {
+    width: 600px;
+    height: 600px;
+    bottom: -250px;
+    right: -180px;
+    background: radial-gradient(circle, #b03c85 0%, #7e3173 100%);
+}
+
+/* Add padding below navbar */
+.mainContainer {
+    padding-top: 100px; /* Ensures space below the navbar */
+    padding-left: 0px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Main content container */
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    flex-grow: 1; /* Allow it to grow and adjust to screen */
+}
+
+/* Header styling */
+.header {
+    color: #ccffff;
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Image styling */
+.img {
+    display: block;
+    margin: 0 auto;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Hyperlink section for logos */
+.hyperLinkSection {
+    position: absolute; /* Position off to the side */
+    right: 85%;
+    top: 30%;
+    transform: translateY(-50%); /* Centers correctly */
+    display: flex;
+    flex-direction: column; /* Stacks items vertically */
+    align-items: center;
+    z-index: 3; /* Logos are above background */
+}
+
+/* LinkedIn logo styling */
+.linkedInLogo {
+    width: 150px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 50px; /* Space between logos */
+    cursor: pointer; /* Makes logos clickable */
+    transition: transform 0.2s ease; /* Animation for hover effect */
+    box-shadow: 0px 0px 0px;
+}
+
+/* GitHub logo styling */
+.githubLogo {
+    width: 150px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer; /* Makes logos clickable */
+    transition: transform 0.2s ease; /* Animation for hover effect */
+    box-shadow: 0px 0px 0px;
+}
+
+.linkedInLogo:hover,
+.githubLogo:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}

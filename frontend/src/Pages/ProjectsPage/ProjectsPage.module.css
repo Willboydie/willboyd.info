@@ -1,0 +1,129 @@
+/* General page styling */
+.background {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh; /* Ensures full height but adapts to changes */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #99CCFF; /* Softer blue background tone */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Abstract square shapes for background */
+.background::before,
+.background::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(135deg, #33FF99 0%, #0066FF 100%); /* Green-blue gradient */
+    opacity: 0.3;
+    z-index: 1; /* Background shapes behind content */
+    transform: rotate(45deg); /* Rotates the square for a dynamic effect */
+}
+
+.background::before {
+    width: 500px;
+    height: 500px;
+    top: -100px;
+    left: -150px;
+}
+
+.background::after {
+    width: 600px;
+    height: 600px;
+    bottom: -200px;
+    right: -180px;
+}
+
+/* Add padding below navbar */
+.mainContainer {
+    padding-top: 100px; /* Ensures space below the navbar */
+    padding-left: 0px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Main content container */
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    z-index: 2;
+    position: relative;
+    flex-grow: 1; /* Allow it to grow and adjust to screen */
+}
+
+/* Header styling */
+.header {
+    color: #ccffff;
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Image styling */
+img {
+    display: block;
+    margin: 0 auto;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Like counter container */
+.likeCounter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* Space between number and heart icon */
+    margin-top: 20px; /* Space between the image and like counter */
+}
+
+/* Like count styling */
+.likeCount {
+    font-size: 2rem; /* Larger font size for visibility */
+    color: #251414; /* Darker text for contrast */
+    font-family: 'Georgia', serif; /* Matching the header font */
+}
+
+/* Heart styling */
+.heart {
+    color: #FF0000; /* Red heart */
+    font-size: 4rem; /* Bigger size for the heart */
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease; /* Smooth transition */
+}
+
+/* Heart swell on hover */
+.heart:hover {
+    transform: scale(1.2); /* Slightly larger when hovered */
+}
+
+/* Heart swell on click */
+.heart:active {
+    animation: swell 0.3s ease; /* Trigger swelling effect */
+}
+
+/* Keyframes for swell effect */
+@keyframes swell {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
